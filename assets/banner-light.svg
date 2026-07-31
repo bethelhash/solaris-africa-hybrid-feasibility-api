@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="160" viewBox="0 0 960 160" fill="none">
+  <defs>
+    <linearGradient id="bLbg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="bLsun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="160" rx="12" fill="url(#bLbg)"/>
+  <rect x="0" y="0" width="6" height="160" rx="3" fill="#F59E0B"/>
+
+  <!-- Mini sun + panel -->
+  <circle cx="70" cy="55" r="18" fill="url(#bLsun)"/>
+  <g stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round" opacity="0.8">
+    <line x1="70" y1="28" x2="70" y2="22"/>
+    <line x1="70" y1="82" x2="70" y2="88"/>
+    <line x1="43" y1="55" x2="37" y2="55"/>
+    <line x1="97" y1="55" x2="103" y2="55"/>
+  </g>
+  <rect x="42" y="90" width="56" height="28" rx="2" fill="#0F172A"/>
+  <line x1="56" y1="90" x2="56" y2="118" stroke="#3B82F6" stroke-width="0.7" opacity="0.5"/>
+  <line x1="70" y1="90" x2="70" y2="118" stroke="#3B82F6" stroke-width="0.7" opacity="0.5"/>
+  <line x1="84" y1="90" x2="84" y2="118" stroke="#3B82F6" stroke-width="0.7" opacity="0.5"/>
+  <line x1="42" y1="99" x2="98" y2="99" stroke="#3B82F6" stroke-width="0.7" opacity="0.5"/>
+  <line x1="42" y1="109" x2="98" y2="109" stroke="#3B82F6" stroke-width="0.7" opacity="0.5"/>
+
+  <text x="130" y="70" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#0F172A">Solaris</text>
+  <text x="130" y="100" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" fill="#64748B">Africa's first computational underwriting engine for C&amp;I Solar+BESS</text>
+  <text x="130" y="122" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#94A3B8">10 markets · 8 sectors · 25-year cashflows · IFC DSCR · Conservative tax logic</text>
+
+  <!-- KPI pills -->
+  <g transform="translate(680, 50)">
+    <rect x="0" y="0" width="90" height="28" rx="14" fill="#ECFDF5"/>
+    <text x="45" y="19" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#059669">≤500ms</text>
+    <rect x="100" y="0" width="90" height="28" rx="14" fill="#EFF6FF"/>
+    <text x="145" y="19" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#2563EB">1.30× DSCR</text>
+    <rect x="0" y="40" width="90" height="28" rx="14" fill="#FFFBEB"/>
+    <text x="45" y="59" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#D97706">10 Markets</text>
+    <rect x="100" y="40" width="90" height="28" rx="14" fill="#F5F3FF"/>
+    <text x="145" y="59" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#7C3AED">8 Sectors</text>
+  </g>
+</svg>
