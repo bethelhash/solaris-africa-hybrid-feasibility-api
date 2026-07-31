@@ -33,6 +33,22 @@
 
 ---
 
+## Commercial product
+
+Solaris is a **paid underwriting API**, not a free calculator and not open-source core.
+
+| Tier | What you get |
+|:---|:---|
+| **Basic** | Quick screens, sector ranking, country compare |
+| **Pro** | Full 25-year model, DSCR tables, scenarios, bankable report payload |
+| **Enterprise** | Higher limits, portfolio batch, priority support |
+
+→ [Subscribe on RapidAPI](https://rapidapi.com/bethelnedi/api/diesel-to-solar-hybrid-feasibility-api-africa)
+
+Docs and methodology are public. The calculation engine is commercial.
+
+---
+
 <br />
 
 ## What Solaris is
