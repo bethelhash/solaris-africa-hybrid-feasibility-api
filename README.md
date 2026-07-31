@@ -48,7 +48,6 @@ Solaris is a **paid underwriting API**, not a free calculator and not open-sourc
 Docs and methodology are public. The calculation engine is commercial.
 
 ---
-
 <br />
 
 ## What Solaris is
