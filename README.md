@@ -37,13 +37,18 @@
 
 Solaris is a **paid underwriting API**, not a free calculator and not open-source core.
 
-| Tier | What you get |
-|:---|:---|
-| **Basic** | Quick screens, sector ranking, country compare |
-| **Pro** | Full 25-year model, DSCR tables, scenarios, bankable report payload |
-| **Enterprise** | Higher limits, portfolio batch, priority support |
+| Tier | Price | Requests/month | Rate limit |
+|:---|:---|---:|---:|
+| **Basic** | $24.99/mo | 1,000 | 60/min |
+| **Pro** | $49.99/mo | 5,000 | 90/min |
+| **Pro Plus** | $99.99/mo | 15,000 | 120/min |
+| **Premium** | $199.99/mo | 50,000 | 180/min |
+| **Elite** | $499.99/mo | 200,000 | 240/min |
+
+Every tier gets **full access to every endpoint** — the quick screen, the full 25-year model, DSCR covenant tables, scenario stress-testing, batch analysis, and the bankable report payload. There is no free tier and no feature reserved for a higher plan; tiers differ only by monthly request volume and per-minute rate limit. Live pricing and quotas: `GET /pricing`.
 
 → [Subscribe on RapidAPI](https://rapidapi.com/bethelnedi/api/diesel-to-solar-hybrid-feasibility-api-africa)
+→ [Subscribe on Zyla API Hub](https://zylalabs.com/api-marketplace/sustainability+%26+green+tech/solaris+africa+hybrid+feasibility+api)
 
 Docs and methodology are public. The calculation engine is commercial.
 
@@ -250,19 +255,29 @@ This is the framing that matters: a product pipeline that ends in an investment 
 
 <br />
 
-## Product tiers
+## Endpoints
+
+Every endpoint below is available on every paid tier — see [Commercial product](#commercial-product) above.
 
 | Endpoint | Feels like | Purpose |
 |:---|:---|:---|
 | `GET /health` | Status card | Version, uptime, supported markets |
-| `GET /pricing` | Commercial plan view | Tier & quota transparency |
-| `POST /analyse/quick` | Instant feasibility screen | Top-of-funnel quoting (Free) |
-| `POST /analyse/full` | Institutional underwriting | Full 25-year model + debt + tax flags (Pro) |
-| `POST /analyse/bankable` | Report generator | 8-section PDF-ready structured payload (Pro) |
+| `GET /pricing` | Commercial plan view | Tier & quota transparency across all marketplaces |
+| `POST /analyse/quick` | Instant feasibility screen | Lean summary — sizing, IRR, payback, DSCR pass/fail |
+| `POST /analyse/full` | Institutional underwriting | Full 25-year model, DSCR covenant table, sensitivity, tax flags |
+| `POST /analyse/batch` | Portfolio screen | Multiple sites in one call, ranked by IRR |
+| `POST /analyse/bankable` | Report generator | 8-section PDF-ready structured payload |
 | `POST /analyse/scenarios` | Investment committee view | Conservative / Base / Optimistic decision tags |
-| `POST /analyse/ppa` | EaaS dual-mode | Break-even tariff via bisection NPV root |
-| `POST /screen/country` | Sector ranking | All 8 load profiles ranked by bankable IRR |
-| `POST /compare/countries` | Country matrix | Same sector across 2–10 markets |
+| `POST /analyse/ppa` | EaaS dual-mode | Developer IRR + break-even tariff via bisection NPV root |
+| `POST /screen/country` | Sector ranking | All 8 load profiles ranked by bankable IRR, one country |
+| `POST /compare/countries` | Country matrix | Same sector across 2–10 markets, ranked by IRR |
+| `POST /screen/es-checklist` | E&S pre-screen | IFC Performance Standards checklist, Category A/B, DFI eligibility |
+| `POST /site/irradiance` | Site-specific yield | PVGIS-SARAH3 lookup by lat/lon — replaces country-average irradiance |
+| `GET /reference/countries` | Market data table | All 10 countries — irradiance, diesel price, incentives, sources |
+| `GET /reference/load-profiles` | Sector data table | All 8 load profiles — solar coincidence, BESS benefit factor |
+| `GET /reference/capex-benchmarks` | Cost basis table | PV/BESS capex, O&M rates, degradation, cycle life assumptions |
+| `GET /reference/methodology` | Citation index | Every standard/paper cited in the engine, by calculation step |
+| `GET /reference/changelog` | Version history | What changed between engine versions and why |
 
 <br />
 
@@ -352,7 +367,7 @@ Content-Type: application/json
 }
 ```
 
-Returns baseline diesel metrics, optimized PV+BESS sizing, dispatch summary, IRR/NPV/payback, DSCR pass/fail, carbon, and land footprint. 25-year cashflow tables are reserved for the full tier.
+Returns baseline diesel metrics, optimized PV+BESS sizing, dispatch summary, IRR/NPV/payback, DSCR pass/fail, carbon, and land footprint. It's the lean summary by design — the full 25-year cashflow schedule is in `/analyse/full`, available on every paid tier.
 
 </details>
 
